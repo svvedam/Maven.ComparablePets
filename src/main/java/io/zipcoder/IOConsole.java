@@ -51,7 +51,8 @@ public class IOConsole {
      * @return user's input as String
      */
     public String getStringInput(String prompt, Object... args) {
-        return prompt;
+        println(prompt,args);
+        return scanner.nextLine();
     }
 
     /**
@@ -59,9 +60,9 @@ public class IOConsole {
      * @param args   : optional arguments to send for string formatting
      * @return user's input as integer
      */
-    public Integer getIntegerInput(Integer prompt, Object... args) {
+    public Integer getIntegerInput(String prompt, Object... args) {
 
-        return prompt;
+        return Integer.valueOf(getStringInput(prompt, args));
     }
 
     /**
